@@ -18,6 +18,7 @@ const StatusLabel: React.FC<IStatusLabelProps> = ({
   status,
   disabled,
 }) => {
+  console.log(process.env.CRM_SECRET_KEY);
   return (
     <span
       className={clsx(
