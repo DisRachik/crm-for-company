@@ -1,9 +1,9 @@
 'use client';
 
 import { Form, Formik } from 'formik';
-import LogoUploader from './logo-uploader';
-import InputField from './input-field';
-import Button from './button';
+import LogoUploader from '@/app/components/logo-uploader';
+import InputField from '@/app/components/input-field';
+import Button from '@/app/components/button';
 
 export type CompanyFieldValues = {
   name: string;

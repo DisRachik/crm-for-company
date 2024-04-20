@@ -1,12 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import Button from './button';
 import dynamic from 'next/dynamic';
+import Button from '@/app/components/button';
 
-const CompanyFormModal = dynamic(() => import('./company-form-modal'), {
-  ssr: false,
-});
+const CompanyFormModal = dynamic(
+  () => import('@/app/components/company-form-modal'),
+  {
+    ssr: false,
+  },
+);
 
 const AddCompanyButton: React.FC = () => {
   const [show, setShow] = useState(false);
