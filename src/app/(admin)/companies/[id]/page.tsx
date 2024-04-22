@@ -1,8 +1,7 @@
 'use client';
 
-import Header from '@/app/components/header';
-import { notFound } from 'next/navigation';
 import { useEffect } from 'react';
+import { notFound } from 'next/navigation';
 
 export interface IPageProps {
   params: { id: string };
@@ -15,7 +14,11 @@ const Page: React.FC<IPageProps> = ({ params }) => {
     if (Number.isNaN(id)) notFound();
   }, [params.id]);
 
-  return <Header>Companies ({params.id})</Header>;
+  return (
+    <div className="py-6 px-10">
+      <p>{`Information about company (${params.id})`}</p>
+    </div>
+  );
 };
 
 export default Page;
