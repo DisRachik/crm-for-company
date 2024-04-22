@@ -5,7 +5,6 @@ export default function Home() {
     <>
       <main>
         <h1 className="text-xl">Home page</h1>
-        <AddCompanyButton />
       </main>
     </>
   );

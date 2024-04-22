@@ -4,9 +4,7 @@ import Image from 'next/image';
 import SidebarItem from '@/app/components/sidebar-item';
 import { usePathname, useRouter } from 'next/navigation';
 
-export interface ISidebarProps {}
-
-const Sidebar: React.FC<ISidebarProps> = ({}) => {
+const Sidebar: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
 

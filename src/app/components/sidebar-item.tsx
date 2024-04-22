@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export interface ISidebarItemProps {
-  current: boolean;
+  current?: boolean;
   pathname: string;
   src: string;
   alt: string;
