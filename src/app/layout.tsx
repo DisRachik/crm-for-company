@@ -1,4 +1,3 @@
-import React from 'react';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 

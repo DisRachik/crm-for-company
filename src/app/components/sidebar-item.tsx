@@ -22,7 +22,7 @@ const SidebarItem: React.FC<ISidebarItemProps> = ({
       <Link
         href={pathname}
         className={clsx(
-          'flex item-center h-9 mx-1 gap-3.5',
+          'flex items-center h-9 mx-1 gap-3.5',
           current &&
             'after:h-full after:ml-auto after:border-2 after:border-purple-200 after:rounded-sm',
         )}
