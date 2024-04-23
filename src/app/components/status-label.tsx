@@ -4,6 +4,7 @@ import { CompanyStatus } from '@/lib/api';
 export interface IStatusLabelProps {
   status: CompanyStatus;
   disabled?: boolean;
+  styled?: boolean;
 }
 
 const labelByStatus = {
@@ -13,8 +14,14 @@ const labelByStatus = {
   [CompanyStatus.Suspended]: 'Suspended',
 };
 
-const StatusLabel: React.FC<IStatusLabelProps> = ({ status, disabled }) => {
-  console.log(process.env.CRM_SECRET_KEY);
+const StatusLabel: React.FC<IStatusLabelProps> = ({
+  status,
+  disabled,
+  styled = true,
+}) => {
+  const label = labelByStatus[status];
+  if (!styled) return <>{label}</>;
+
   return (
     <span
       className={clsx(
@@ -29,7 +36,7 @@ const StatusLabel: React.FC<IStatusLabelProps> = ({ status, disabled }) => {
       )}
     >
       <div className="w-1 h-1 mr-2 rounded-full bg-current" />
-      {labelByStatus[status]}
+      {label}
     </span>
   );
 };

@@ -5,6 +5,7 @@ import { Field } from 'formik';
 export interface IInputFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  as?: React.ReactNode;
 }
 
 const InputField: React.FC<IInputFieldProps> = ({ label, id, ...rest }) => {

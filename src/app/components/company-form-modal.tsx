@@ -1,19 +1,14 @@
 'use client';
 
-import CompanyForm, { ICompanyFormProps } from '@/app/components/company-form';
+import CompanyForm from '@/app/components/company-form';
 import Modal, { IModalProps } from '@/app/components/modal';
 
-export interface ICompanyFormModalProps extends IModalProps {
-  onSubmit: ICompanyFormProps['onSubmit'];
-}
+export interface ICompanyFormModalProps extends IModalProps {}
 
-const CompanyFormModal: React.FC<ICompanyFormModalProps> = ({
-  onSubmit,
-  ...rest
-}) => {
+const CompanyFormModal = ({ onClose, ...rest }: IModalProps) => {
   return (
-    <Modal {...rest}>
-      <CompanyForm onSubmit={onSubmit} />
+    <Modal {...rest} onClose={onClose}>
+      <CompanyForm onSubmit={() => onClose()} />
     </Modal>
   );
 };

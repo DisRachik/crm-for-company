@@ -98,9 +98,35 @@ export const getCompany = (id: string, init?: RequestInit) => {
 export const getPromotions = async (
   params: Record<string, string> = {},
   init?: RequestInit,
-) => {
-  return sendRequest<Promotion[]>(
+) =>
+  sendRequest<Promotion[]>(
     `${buildUrl('promotions')}?${stringifyQueryParams(params)}`,
     init,
   );
-};
+
+export const createCompany = (
+  data: Omit<Company, 'id' | 'hasPromotions'>,
+  init?: RequestInit,
+) =>
+  sendRequest<Company>(buildUrl('companies'), {
+    ...init,
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      ...(init && init.headers),
+      'content-type': 'application/json',
+    },
+  });
+
+export const createPromotion = (
+  data: Omit<Promotion, 'id'>,
+  init?: RequestInit,
+) =>
+  sendRequest<Promotion>(buildUrl('promotions'), {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      ...(init && init.headers),
+      'content-type': 'application/json',
+    },
+  });
