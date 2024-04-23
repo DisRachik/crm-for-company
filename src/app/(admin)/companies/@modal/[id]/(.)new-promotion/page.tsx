@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import PromotionFormModal from '@/app/components/promotion-form-modal';
 
 export interface IPageProps {
